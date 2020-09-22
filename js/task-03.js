@@ -97,4 +97,4 @@ const getUsersWithGender = users
     return name;
   }, []);
 
-console.log(getUsersWithGender);
+console.table(getUsersWithGender);

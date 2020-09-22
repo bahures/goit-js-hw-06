@@ -85,23 +85,14 @@ const users = [
   },
 ];
 
-const friendToFind = "Briana Decker";
+const getUsersWithFriend = (users, friendName) =>
+  users
+    .filter((user) => {
+      if (user.friends.includes(friendName)) {
+        return user.name;
+      }
+    })
+    .map((user) => user.name);
 
-const getUsersWithFriend = users.reduce(function (usersNamesArr, user) {
-  if (user.friends.includes(friendToFind)) {
-    usersNamesArr.push(user.name);
-  }
-  return usersNamesArr;
-}, []);
-
-console.log(getUsersWithFriend);
-
-// const getUsersWithFriend = (users, friendName) =>
-//   users.reduce(
-//     (usersNamesArr, user) => (
-//       user.friends.icludes(friendName), usersNamesArr.push(user.name)
-//     ),
-//     []
-//   );
-// console.log(getUsersWithFriend(users, "Briana Decker")); // [ 'Sharlene Bush', 'Sheree Anthony' ]
-// console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, "Briana Decker"));
+console.log(getUsersWithFriend(users, "Goldie Gentry"));

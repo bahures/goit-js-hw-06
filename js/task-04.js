@@ -89,4 +89,4 @@ const getInactiveUsers = users.filter(function (user) {
   return !user.isActive;
 });
 
-console.log(getInactiveUsers);
+console.table(getInactiveUsers);
